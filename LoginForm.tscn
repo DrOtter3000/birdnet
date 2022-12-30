@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://message_theme.tres" type="Theme" id=1]
+[ext_resource path="res://MessageBG1.png" type="Texture" id=2]
+[ext_resource path="res://logo_theme.tres" type="Theme" id=3]
+[ext_resource path="res://LoginForm.gd" type="Script" id=4]
+
+[node name="LoginForm" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -192.0
+margin_top = -200.0
+margin_right = 192.0
+margin_bottom = 152.0
+texture = ExtResource( 2 )
+patch_margin_left = 7
+patch_margin_top = 9
+patch_margin_right = 7
+patch_margin_bottom = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LblLogo" type="Label" parent="."]
+margin_left = 448.0
+margin_top = 160.0
+margin_right = 832.0
+margin_bottom = 244.0
+theme = ExtResource( 3 )
+text = "Birdnet"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoginFormFunctionality" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -104.0
+margin_right = 160.0
+margin_bottom = 120.0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LblLogin" type="Label" parent="LoginFormFunctionality"]
+anchor_right = 1.0
+margin_bottom = 55.0
+theme = ExtResource( 1 )
+text = "CC-Login:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="LoginFormFunctionality"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -32.5
+margin_bottom = 32.5
+theme = ExtResource( 1 )
+
+[node name="BtnLogin" type="Button" parent="LoginFormFunctionality"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -128.0
+margin_top = -55.0
+size_flags_horizontal = 0
+theme = ExtResource( 1 )
+text = "Login"
+[connection signal="pressed" from="LoginFormFunctionality/BtnLogin" to="." method="_on_BtnLogin_pressed"]
